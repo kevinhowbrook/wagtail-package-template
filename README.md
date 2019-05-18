@@ -12,19 +12,17 @@ Circle ci config example is added, once it fully configured add a badge to the r
 
 ## Publishing to PYPI
 
-To package your app
-
-You will need twine
+To package your app for pypi you will need twine:
 ```
 pip install twine
 ```
-Then run the following
+Then run the following:
 
 ```
 python setup.py sdist bdist_wheel
 ```
 
-You should now have a dist/ directory
+You should now have a dist/ directory:
 
 ```
 twine check dist/*
