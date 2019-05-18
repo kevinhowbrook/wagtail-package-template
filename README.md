@@ -7,7 +7,7 @@ Replace `yourapp` in these files with what you intend to build
 Circle ci config example is added, once it fully configured add a badge to the readme to indicate passing:
 
 ```
-[![CircleCI](https://circleci.com/gh/kevinhowbrook/wagtailguide.svg?style=shield&circle)](https://circleci.com/gh/kevinhowbrook/wagtailguide)
+[![CircleCI](https://circleci.com/gh/yourname/yourapp.svg?style=shield&circle)](https://circleci.com/gh/yourname/yourapp)
 ```
 
 ## Publishing to PYPI
