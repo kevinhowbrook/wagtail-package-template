@@ -1,29 +1,32 @@
+# Python CircleCI 2.0 configuration file
 version: 2
 jobs:
   build:
-    working_directory: ~/yourapp
     docker:
-      - image: circleci/python:3.6.4
-        environment:
-          PIPENV_VENV_IN_PROJECT: true
-          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
-      - image: circleci/postgres:9.6.2
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: circleci/python:3.8
+      - image: circleci/postgres:11.5
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: circle_test
+
+    working_directory: ~/repo
+
     steps:
       - checkout
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - run:
+          name: install dependencies
           command: |
-            sudo pip install pipenv
-            pipenv install wagtail
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install wagtail
       - run:
+          name: run tests
           command: |
-            pipenv run "python runtests.py"
-      - store_test_results:
-          path: test-results
-      - store_artifacts:
-          path: test-results
-          destination: tr1
+            . venv/bin/activate
+            pip install coverage
+            coverage run ./runtests.py
+            coverage report
+            coverage xml
+            bash <(curl -s https://codecov.io/bash) -t "YOUR CODECOV TOKEN"

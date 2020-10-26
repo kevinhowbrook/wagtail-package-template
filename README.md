@@ -10,6 +10,10 @@ Circle ci config example is added, once it fully configured add a badge to the r
 [![CircleCI](https://circleci.com/gh/yourname/yourapp.svg?style=shield&circle)](https://circleci.com/gh/yourname/yourapp)
 ```
 
+## Tests and coverage
+
+The ci will run coverage and  upload a report to http://codecov.io/ if you configure the token in circle/config.yml
+
 ## Publishing to PYPI
 
 To package your app for pypi you will need twine:

@@ -12,7 +12,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 
-setup(name='wagtail_guide',
+setup(name='youtapp',
       version='1',
       description='MY amazing app',
       long_description=long_description,
