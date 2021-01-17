@@ -12,7 +12,7 @@ Circle ci config example is added, once it fully configured add a badge to the r
 
 ## Tests and coverage
 
-The ci will run coverage and  upload a report to http://codecov.io/ if you configure the token in circle/config.yml
+The ci will run coverage and  upload a report to http://codecov.io/ if you configure the token in circle/config.yml or .github/workflows/main.yml
 
 ## Publishing to PYPI
 
