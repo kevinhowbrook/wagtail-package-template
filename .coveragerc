@@ -1,6 +1,7 @@
 [run]
-include = yourapp/*
 omit = *migrations*, *tests*
+
+source = yourapp
 
 [html]
 directory = coverage_html_report
